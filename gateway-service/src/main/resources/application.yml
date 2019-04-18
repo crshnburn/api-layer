@@ -34,8 +34,8 @@ apiml:
         hostname: localhost  # The hostname for other services to access the gateway
         timeoutMillis: 30000  # Timeout for connection to the services
     security:
-        jwtAlgorithm: HS256
-        jwtSecret: plaintext
+        jwtSignatureAlgorithm: HS512
+        jwtSecretType: plaintext
 
 spring:
     application:

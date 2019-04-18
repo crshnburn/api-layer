@@ -34,6 +34,8 @@ public class SecurityConfigurationProperties {
     private CookieProperties cookieProperties;
     private String zosmfServiceId;
     private boolean verifySslCertificatesOfServices = true;
+    private String jwtSignatureAlgorithm;
+    private String jwtSecretType;
 
     @Data
     public static class TokenProperties {
@@ -58,7 +60,7 @@ public class SecurityConfigurationProperties {
         if ((zosmfServiceId == null) || zosmfServiceId.isEmpty()) {
             log.error("z/OSMF service name not found. Set property apiml.security.zosmfServiceId to your service name.");
             throw new AuthenticationServiceException("Parameter 'zosmfServiceId' is not configured.");
-        }        
+        }
         return zosmfServiceId;
     }
 }
